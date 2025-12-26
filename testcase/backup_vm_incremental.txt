@@ -1,0 +1,26 @@
+@testcase backup_vm_incremental
+@depends_on backup_vm_full
+
+@max_wait 30
+@poll_interval 2
+
+
+@pre
+
+
+@run
+Type "admin" on the username input.
+Type "admin" on password input.
+Click the "Log In" button.
+Expect "Data Protection" to be visible.
+
+Open the Data Protection menu.
+Click create a new job.
+Expect "Backup for Microsoft 365" to be visible.
+Select "Backup for Microsoft 365" as the job type.
+Expect "Sources" to be visible.
+
+
+@finally
+[physical] Verify file "mail_01.eml" exists in backup repository "365_Backup".
+Expect backup type to be "Incremental".

@@ -1,0 +1,273 @@
+{
+  "Type \"admin\" on the username input.": {
+    "step": "Type \"admin\" on the username input.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/div[1]/div[1]/input[1]",
+    "method": "fill",
+    "arguments": [
+      "admin"
+    ],
+    "description": "Username input field",
+    "coordinates": null
+  },
+  "Type \"admin\" on password input.": {
+    "step": "Type \"admin\" on password input.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/div[2]/div[1]/input[1]",
+    "method": "type",
+    "arguments": [
+      "admin"
+    ],
+    "description": "Type \"admin\" into the password input field.",
+    "coordinates": null
+  },
+  "Expect \"Log In\" to be visible.": {
+    "step": "Expect \"Log In\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[3]/div[2]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "The 'LOG IN' button to submit credentials.",
+    "coordinates": null
+  },
+  "Click the \"Log In\" button.": {
+    "step": "Click the \"Log In\" button.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[3]/div[2]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Log In button",
+    "coordinates": null
+  },
+  "Expect \"Data Protection\" to be visible.": {
+    "step": "Expect \"Data Protection\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[2]",
+    "method": "getByText",
+    "arguments": [
+      "Data Protection"
+    ],
+    "description": "The text 'Data Protection' is visible on the page.",
+    "coordinates": null
+  },
+  "Open the Data Protection menu.": {
+    "step": "Open the Data Protection menu.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[2]",
+    "method": "click",
+    "arguments": [],
+    "description": "Open the Data Protection menu.",
+    "coordinates": null
+  },
+  "Select job \"test_365\".": {
+    "step": "Select job \"test_365\".",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[2]/div[2]/div[3]/div[2]/div[2]/div[4]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/table[1]/tbody[1]/tr[3]/td[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Selects the job named 'test_365' from the list of jobs.",
+    "coordinates": null
+  },
+  "Click the \"Run\" button.": {
+    "step": "Click the \"Run\" button.",
+    "selector": "xpath=/html/body[1]/div[11]/div[3]/div[1]/div[2]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Click the 'Run' button to initiate the job.",
+    "coordinates": null
+  },
+  "Wait until the job status is not \"Running\".": {
+    "step": "Wait until the job status is not \"Running\".",
+    "selector": "xpath=/tbody[1]/tr[8]/td[1]/div[1]/div[1]/div[2]/div[1]",
+    "method": "waitForSelector",
+    "arguments": [
+      "text=The job has finished"
+    ],
+    "description": "The status message indicating the job has finished, which is the most recent event in the events table. Waiting for this text to appear signifies that the job is no longer running.",
+    "coordinates": null
+  },
+  "Expect the job status to be \"Completed\".": {
+    "step": "Expect the job status to be \"Completed\".",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[2]/div[2]/div[3]/div[2]/div[3]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[3]",
+    "method": "playwright.locator",
+    "arguments": [
+      "//div[./link[@name=\"danh07emptygr\"]]/text()[normalize-space()='Completed']"
+    ],
+    "description": "The status of the job, which is expected to be 'Completed'.",
+    "coordinates": null
+  },
+  "Click create a new job.": {
+    "step": "Click create a new job.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Button on the top left to create a new job.",
+    "coordinates": null
+  },
+  "Expect \"Backup for Microsoft 365\" to be visible.": {
+    "step": "Expect \"Backup for Microsoft 365\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[2]/div[2]/div[3]/div[2]/div[3]/div[2]/div[1]/div[4]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[2]/div[2]",
+    "method": "getByText",
+    "arguments": [
+      "Backup for Microsoft 365"
+    ],
+    "description": "A static text element containing the phrase 'Backup job for Microsoft 365' as part of a job started event description.",
+    "coordinates": null
+  },
+  "Select \"Backup for Microsoft 365\" as the job type.": {
+    "step": "Select \"Backup for Microsoft 365\" as the job type.",
+    "selector": null,
+    "method": "click",
+    "arguments": [
+      491,
+      137
+    ],
+    "description": "Recovered by agent_act",
+    "coordinates": null
+  },
+  "Expect \"Sources\" to be visible.": {
+    "step": "Expect \"Sources\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[2]/div[1]/a[1]",
+    "method": "isVisible",
+    "arguments": [],
+    "description": "The text '1. Sources' which indicates the current step in the wizard.",
+    "coordinates": null
+  },
+  "Type \"danh07emptygr\" on the source search input.": {
+    "step": "Type \"danh07emptygr\" on the source search input.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1]",
+    "method": "fill",
+    "arguments": [
+      "danh07emptygr"
+    ],
+    "description": "Type \"danh07emptygr\" into the search input.",
+    "coordinates": null
+  },
+  "Press Enter.": {
+    "step": "Press Enter.",
+    "selector": null,
+    "method": "press",
+    "arguments": [
+      "Enter"
+    ],
+    "description": "Keyboard action: Press Enter.",
+    "coordinates": null
+  },
+  "Click the \"Create new job\" button.": {
+    "step": "Click the \"Create new job\" button.",
+    "selector": "xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "The button on the top left that the page instructs to click to create a new job.",
+    "coordinates": null
+  },
+  "Click on the icon(\"+\") on the right near \"Jobs\".": {
+    "step": "Click on the icon(\"+\") on the right near \"Jobs\".",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/span[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "The plus icon next to the 'Jobs' text, likely used to add a new job.",
+    "coordinates": null
+  },
+  "Select the checkbox labeled \"danh07emptygr\" Group Mailboxes.": {
+    "step": "Select the checkbox labeled \"danh07emptygr\" Group Mailboxes.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/input[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Checkbox for 'danh07emptygr' under 'Group Mailboxes'.",
+    "coordinates": null
+  },
+  "Expect \"danh07emptygr\" Group Mailboxes to be visible in the right panel.": {
+    "step": "Expect \"danh07emptygr\" Group Mailboxes to be visible in the right panel.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]",
+    "method": "getByText",
+    "arguments": [
+      "danh07emptygr"
+    ],
+    "description": "The 'danh07emptygr' item listed under 'Group Mailboxes' in the table.",
+    "coordinates": null
+  },
+  "Click Next.": {
+    "step": "Click Next.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[7]/div[4]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Click the Next button to proceed.",
+    "coordinates": null
+  },
+  "Expect \"Destination\" to be visible.": {
+    "step": "Expect \"Destination\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[2]/div[1]/a[2]",
+    "method": "expect",
+    "arguments": [
+      "toBeVisible"
+    ],
+    "description": "The 'Destination' step in the New Backup Job Wizard.",
+    "coordinates": null
+  },
+  "Click the destination repository dropdown.": {
+    "step": "Click the destination repository dropdown.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[4]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]",
+    "method": "click",
+    "arguments": [],
+    "description": "Click the text 'Select a target destination' to open the destination repository dropdown.",
+    "coordinates": null
+  },
+  "Select \"365_Backup\".": {
+    "step": "Select \"365_Backup\".",
+    "selector": "xpath=/html/body[1]/div[10]/div[1]/div[6]/div[1]/div[2]",
+    "method": "click",
+    "arguments": [],
+    "description": "Selects the '365_Backup' option.",
+    "coordinates": null
+  },
+  "Expect \"Schedule\" to be visible.": {
+    "step": "Expect \"Schedule\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[2]/div[1]/a[3]",
+    "method": "getByText",
+    "arguments": [
+      "Schedule"
+    ],
+    "description": "The text 'Schedule' which is part of '3. Schedule' in a wizard step.",
+    "coordinates": null
+  },
+  "Ensure \"Do not schedule, run on demand\" is selected.": {
+    "step": "Ensure \"Do not schedule, run on demand\" is selected.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Click the checkbox to select 'Do not schedule, run on demand'.",
+    "coordinates": null
+  },
+  "Expect \"Options\" to be visible.": {
+    "step": "Expect \"Options\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[2]/div[1]/a[4]",
+    "method": "getByText",
+    "arguments": [
+      "Options"
+    ],
+    "description": "The 'Options' step in the New Backup Job Wizard for Microsoft 365.",
+    "coordinates": null
+  },
+  "Type \"test_365\" on the Job Name field.": {
+    "step": "Type \"test_365\" on the Job Name field.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[6]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]",
+    "method": "type",
+    "arguments": [
+      "test_365"
+    ],
+    "description": "Type \"test_365\" on the Job Name field.",
+    "coordinates": null
+  },
+  "Click the \"Finish & Run\" button.": {
+    "step": "Click the \"Finish & Run\" button.",
+    "selector": "xpath=/html/body[1]/div[1]/div[2]/div[4]/div[1]/div[2]/div[7]/div[5]/em[1]/button[1]",
+    "method": "click",
+    "arguments": [],
+    "description": "Click the \"Finish & Run\" button to complete and start the job.",
+    "coordinates": null
+  },
+  "Expect \"Run this job?\" to be visible.": {
+    "step": "Expect \"Run this job?\" to be visible.",
+    "selector": "xpath=/html/body[1]/div[11]",
+    "method": "locator",
+    "arguments": [
+      "dialog[name=\"Run this job?\"]"
+    ],
+    "description": "The dialog box titled \"Run this job?\" which is expected to be visible.",
+    "coordinates": null
+  }
+}

@@ -1,0 +1,55 @@
+@testcase backup_vm_full
+@max_wait 30
+@poll_interval 2
+
+@pre
+Feature: Verify virtual machine existence on vCenter
+  Scenario: Check that VM "4MB-11-replica-02-recovered" exists on the vCenter server
+    Given I have access to the vCenter server at "10.10.10.20"
+      And I authenticate using username "Vcenter03.local\administrator" and password "Automation@123"
+    When I query vCenter for virtual machines named "4MB-11-replica-02-recovered"
+    Then a virtual machine named "4MB-11-replica-02-recovered" should be returned
+    And no error message should be reported
+
+
+@run
+Type "admin" on the username input.
+Type "admin" on password input.
+Expect "Log In" to be visible.
+Click the "Log In" button.
+Expect "Data Protection" to be visible.
+
+Open the Data Protection menu.
+Click on the icon("+") on the right near "Jobs".
+Expect "Backup for VMware" to be visible.
+Select "Backup for VMware" as the job type.
+Expect "Source" to be visible.
+
+Type "4MB-11-replica-02-recovered" on the source search input.
+Press Enter.
+Select the checkbox labeled "4MB-11-replica-02-recovered" Group Mailboxes.
+Expect "4MB-11-replica-02-recovered" Group Mailboxes to be visible in the right panel.
+Click Next.
+Expect "Destination" to be visible.
+
+Click the destination repository dropdown.
+Select "365_Backup".
+Click Next.
+Expect "Schedule" to be visible.
+
+Ensure "Do not schedule, run on demand" is selected.
+Click Next.
+Expect "Options" to be visible.
+
+Type "test_vm" on the Job Name field.
+Click the "Finish & Run" button.
+Expect "Run this job?" to be visible.
+
+Click the "Run" button.
+Wait until the status job is not "Running".
+Expect the job status to be "Completed".
+
+Click the Settings menu.
+Click the Repositories section.
+Select "365_Backup".
+Expect "4MB-11-replica-02-recovered" Group Mailboxes to be visible in the backup list.

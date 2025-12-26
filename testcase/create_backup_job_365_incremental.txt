@@ -1,0 +1,32 @@
+@testcase backup_m365_incremental
+@depends_on create_backup_job_365_full
+
+@max_wait 30
+@poll_interval 2
+
+
+@pre
+Feature: Verify virtual machine existence on Hyper-V
+  Scenario: Check that VM "QAVN_103_Ubuntu18x64_01" exists on the Hyper-V host
+    Given I am connected to the Hyper-V server at "10.10.20.103" using administrator credentials with password Autoamtion@123
+    When I execute the PowerShell command "Get-VM -Name 'QAVN_103_Ubuntu18x64_01'"
+    Then the result should contain a virtual machine named "QAVN_103_Ubuntu18x64_01"
+    And no error message should be returned
+
+
+@run
+Type "admin" on the username input.
+Type "admin" on password input.
+Click the "Log In" button.
+Expect "Data Protection" to be visible.
+
+Open the Data Protection menu.
+Click create a new job.
+Expect "Backup for Microsoft 365" to be visible.
+Select "Backup for Microsoft 365" as the job type.
+Expect "Sources" to be visible.
+
+
+@finally
+[physical] Verify file "mail_01.eml" exists in backup repository "365_Backup".
+Expect backup type to be "Incremental".
