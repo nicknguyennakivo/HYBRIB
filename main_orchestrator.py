@@ -12,9 +12,20 @@ executor = TestCaseExecutor()
 orchestrator = TestOrchestrator(loader, executor)
 
 import asyncio
+import argparse
+
+def _parse_args():
+    parser = argparse.ArgumentParser(description="Run a DSL testcase")
+    parser.add_argument(
+        "--testcase", "-t",
+        help="Testcase name (without .txt)",
+        default="backup_vm_incremental",
+    )
+    return parser.parse_args()
 
 async def main():
-    testcase = "backup_vm_incremental.txt"
+    args = _parse_args()
+    testcase = args.testcase
     
     GREEN = "\033[92m"
     RED = "\033[91m"

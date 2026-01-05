@@ -1,0 +1,5 @@
+# Core runtime (no extra deps needed for parser/runner)
+
+# UI automation (optional, if you use Stagehand)
+stagehand
+playwright

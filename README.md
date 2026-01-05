@@ -19,14 +19,13 @@ Lightweight test orchestration prototype for running DSL-defined UI test cases w
    - Create: `py -3 -m venv .venv`
    - Activate: `.\.venv\Scripts\Activate`
 3. Install dependencies:
-   - `pip install stagehand`
-   - `pip install playwright`
+   - `pip install -r requirements.txt`
    - `python -m playwright install`
 
 ## Running
 From the project root:
 
-- `python .\main_orchestrator.py`
+- `python .\main_orchestrator.py --testcase=backup_vm_incremental`
 
 This loads the test case `create_backup_job_365_incremental.txt`, automatically runs its dependencies (e.g. the full backup), executes, and exits with code 0 on pass or 1 on failure.
 
