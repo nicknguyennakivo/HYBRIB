@@ -116,6 +116,26 @@ POWER SHELL OUTPUT RULE:
     - Select-Object -ExpandProperty <Property>
     - Write-Output <value>
 
+SHELL SAFETY RULE (MANDATORY):
+
+- NEVER use `echo "..." > file` or escaped quotes in shell commands.
+- NEVER generate shell commands that rely on \" or nested quoting.
+- When writing file content, ALWAYS use ONE of the following safe patterns:
+
+  1) printf '%s\n' <content> > <path>
+  2) cat <<'EOF' > <path>
+     <content>
+     EOF
+
+- Content literals MUST remain EXACTLY unchanged.
+────────────────────────────────────
+
+ABSOLUTE RULE:
+- NEVER use double quotes (") inside ssh_run commands.
+- NEVER use escaped quotes (\"), under any circumstances.
+- All shell strings MUST use single quotes only.
+────────────────────────────────────
+
 Return ONLY a valid JSON array (no markdown, no explanation):
 
 [

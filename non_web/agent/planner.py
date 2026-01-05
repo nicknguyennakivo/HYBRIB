@@ -8,16 +8,23 @@ class Planner:
 
     def create_plan(self, testcase_text: str) -> dict:
         prompt = f"""
-You are a senior automation planner.  
+You are a senior automation planner.
+
+CRITICAL RULES (must follow):
+- Preserve ALL literals EXACTLY as written in the testcase.
+- Do NOT redact, abstract, paraphrase, or hide credentials.
+- Strings inside quotes MUST appear unchanged in output.
+- Do NOT replace passwords with generic wording.
+
 Convert the following testcase into a PLANNED GOAL and REQUIRED STEPS.
 
 Testcase:
 {testcase_text}
 
-Return ONLY valid JSON in this exact format (no markdown, no explanation):
+Return ONLY valid JSON in this exact format:
 {{
   "goal": "string",
-  "steps": ["step1", "step2", ...]
+  "steps": ["step1", "step2"]
 }}
 """
         result = self.llm.ask(prompt)

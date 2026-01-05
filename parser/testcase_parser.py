@@ -9,8 +9,8 @@ def parse_testcase(text: str) -> TestCase:
     depends_on = []
     pre, run, finally_ = [], [], []
     # continue implementing parsing two parameters
-    max_wait = 60  # default 60 minutes
-    poll_interval = 3  # default 3 minutes
+    max_wait = 120  # default 120 minutes
+    poll_interval = 2  # default 2 minutes
 
     section = None
 

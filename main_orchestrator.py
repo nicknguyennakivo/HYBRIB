@@ -14,7 +14,24 @@ orchestrator = TestOrchestrator(loader, executor)
 import asyncio
 
 async def main():
-    status = await orchestrator.run_testcase("backup_vm_incremental.txt")
+    testcase = "backup_vm_incremental.txt"
+    
+    GREEN = "\033[92m"
+    RED = "\033[91m"
+    YELLOW = "\033[93m"
+    RESET = "\033[0m"
+    status = await orchestrator.run_testcase(testcase)
+
+    print("\n================ TEST RESULT ================")
+    print(f"Testcase : {testcase}")
+
+    if status == TestStatus.PASSED:
+        print(f"Status   : {GREEN}{status.value.upper()}{RESET}")
+    elif status == TestStatus.SKIPPED:
+        print(f"Status   : {YELLOW}{status.value.upper()}{RESET}")
+    else:
+        print(f"Status   : {RED}{status.value.upper()}{RESET}")
+    print("============================================\n")
 
     if status != TestStatus.PASSED:
         raise SystemExit(1)

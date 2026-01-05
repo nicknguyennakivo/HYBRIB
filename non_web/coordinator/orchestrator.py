@@ -32,6 +32,7 @@ class Orchestrator:
                 return True
 
             action = decision["action"]
+            print("RAW ACTION STRING:", repr(action))
             print(f"\n▶ Executing action: {action}")
 
             # 3) Execute with self-healing loop

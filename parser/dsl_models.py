@@ -15,5 +15,5 @@ class TestCase:
     run: List[Step]
     finally_: List[Step]
     # New timing parameters (in minutes)
-    max_wait: int = 60
-    poll_interval: int = 3
+    max_wait: int = 120
+    poll_interval: int = 2

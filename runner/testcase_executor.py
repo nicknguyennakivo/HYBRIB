@@ -53,5 +53,9 @@ class TestCaseExecutor:
 
     async def run_finally(self, steps):
         print("Running FINALLY steps...")
-        return True
+        try:
+            result = await non_web_main(steps)
+            return result
+        except Exception as e:
+            logger.error(f"FINALLY steps failed: {e}")
 
