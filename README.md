@@ -19,8 +19,9 @@ Lightweight test orchestration prototype for running DSL-defined UI test cases w
    - Create: `py -3 -m venv .venv`
    - Activate: `.\.venv\Scripts\Activate`
 3. Install dependencies:
-   - There are currently no external pip requirements for the basic parser/orchestrator flow.
-   - Optional: If you plan to wire up a real UI engine ("Stagehand"), install whatever packages you need and update imports in `stagehand/` accordingly.
+   - `pip install stagehand`
+   - `pip install playwright`
+   - `python -m playwright install`
 
 ## Running
 From the project root:
