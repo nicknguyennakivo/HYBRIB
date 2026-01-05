@@ -1,7 +1,6 @@
 # runner/testcase_executor.py
 import json
 
-from matplotlib.pyplot import step
 from parser.test import TestStatus
 from parser.dsl_models import TestCase
 from stage_hand.stagehand_runner import process
