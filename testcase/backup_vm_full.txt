@@ -3,7 +3,6 @@
 @poll_interval 2
 
 
-
 @run
 Type "admin" on the username input.
 Type "admin" on password input.
@@ -12,7 +11,7 @@ Click the "Log In" button.
 Expect "Data Protection" to be visible.
 
 Open the Data Protection menu.
-Click create a new job.
+@execute Click create a new job.
 Expect "Backup for VMware" to be visible.
 Select "Backup for VMware" as the job type.
 Expect "Source" to be visible.

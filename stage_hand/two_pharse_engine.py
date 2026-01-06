@@ -1,4 +1,3 @@
-from matplotlib.pyplot import step
 from stage_hand.result import EngineActResult
 from stage_hand.snapshot_store import SnapshotStore
 from stage_hand.selector_snapshot import SelectorSnapshot
@@ -53,7 +52,7 @@ class TwoPhaseEngine:
         # 2️⃣ Observe (LLM)
         result: ObserveResult = await page.observe(step)
         print(f"ObserveResult: {result}")
-        if not result:
+        if not result or step.startswith("@execute"):
             agent_act_result = await self.agent_act(page, step, stagehand)
             if not agent_act_result.success:
                 return EngineActResult(

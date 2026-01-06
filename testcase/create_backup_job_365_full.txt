@@ -3,13 +3,6 @@
 @poll_interval 2
 
 @pre
-Feature: Verify virtual machine existence on Hyper-V
-  Scenario: Check that VM "QAVN_103_Ubuntu18x64_01" exists on the Hyper-V host
-    Given I am connected to the Hyper-V server at "10.10.20.103" using administrator credentials with password Autoamtion@123
-    When I execute the PowerShell command "Get-VM -Name 'QAVN_103_Ubuntu18x64_01'"
-    Then the result should contain a virtual machine named "QAVN_103_Ubuntu18x64_01"
-    And no error message should be returned
-
 
 @run
 Type "admin" on the username input.
@@ -19,7 +12,7 @@ Click the "Log In" button.
 Expect "Data Protection" to be visible.
 
 Open the Data Protection menu.
-Click on the icon("+") on the right near "Jobs".
+@execute Click icon button used to create a new job.
 Expect "Backup for Microsoft 365" to be visible.
 Select "Backup for Microsoft 365" as the job type.
 Expect "Sources" to be visible.
@@ -45,7 +38,7 @@ Click the "Finish & Run" button.
 Expect "Run this job?" to be visible.
 
 Click the "Run" button.
-Wait until the status job is not "Running".
+Wait until the job status in Job Info is not "Running".
 Expect the job status to be "Completed".
 
 Click the Settings menu.

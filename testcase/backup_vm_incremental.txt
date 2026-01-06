@@ -19,8 +19,8 @@ Click the "Log In" button.
 Expect "Data Protection" to be visible.
 
 Open the Data Protection menu.
-Click the “test_vm” job.
-Verify that the "Run" icon is visible.
+@execute Click the “test_vm” job.
+@execute Verify that the "Run" icon is visible.
 Click Run.
 Verify that the "Run this job?" dialog is displayed.
 Select "Incremental" from the Backup Type dropdown.

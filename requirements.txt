@@ -3,3 +3,4 @@
 # UI automation (optional, if you use Stagehand)
 stagehand
 playwright
+google-generativeai
